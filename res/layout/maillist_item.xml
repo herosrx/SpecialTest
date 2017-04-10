@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal"
+    android:padding="@dimen/layout_vertical_margin_small" >
+
+    <TextView
+        android:id="@+id/tv_mail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1"
+        android:ellipsize="marquee"
+        android:gravity="center_vertical"
+        android:marqueeRepeatLimit="1"
+        android:singleLine="true"
+        android:textColor="#5B5B5B"
+        android:textSize="@dimen/text_size_middle" />
+
+    <Button
+        android:id="@+id/bt_editmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mail_edit"
+        android:textColor="#5B5B5B"
+        android:textSize="@dimen/text_size" />
+
+    <Button
+        android:id="@+id/bt_deletemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/report_delete"
+        android:textColor="#5B5B5B"
+        android:textSize="@dimen/text_size" />
+
+</LinearLayout>
