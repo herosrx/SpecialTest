@@ -99,7 +99,7 @@ public class SelectAppActivity extends BaseActivity {
 
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
-			Programe pr = (Programe) programes.get(position);
+			Programe pr = programes.get(position);
 			if (convertView == null)
 				convertView = getLayoutInflater().inflate(R.layout.applist_item, parent, false);
 			Viewholder holder = (Viewholder) convertView.getTag();

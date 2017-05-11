@@ -22,7 +22,7 @@ public class DirectionActivity extends BaseActivity {
 		title.setText(R.string.direction);
 
 		ImageView btnSave = (ImageView) findViewById(R.id.btn_set);
-		btnSave.setVisibility(ImageView.INVISIBLE);
+		btnSave.setVisibility(View.INVISIBLE);
 		
 		LinearLayout layGoBack = (LinearLayout) findViewById(R.id.lay_go_back);
 

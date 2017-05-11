@@ -33,7 +33,7 @@ public class AboutActivity extends BaseActivity {
 		title.setText(R.string.about);
 
 		ImageView btnSave = (ImageView) findViewById(R.id.btn_set);
-		btnSave.setVisibility(ImageView.INVISIBLE);
+		btnSave.setVisibility(View.INVISIBLE);
 
 		LinearLayout layGoBack = (LinearLayout) findViewById(R.id.lay_go_back);
 

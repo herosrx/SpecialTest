@@ -12,6 +12,7 @@ import javax.activation.MailcapCommandMap;
 import javax.mail.Address;
 import javax.mail.BodyPart;
 import javax.mail.Message;
+import javax.mail.Message.RecipientType;
 import javax.mail.MessagingException;
 import javax.mail.Multipart;
 import javax.mail.Session;
@@ -68,7 +69,7 @@ public class MailSender {
 				for (int i = 0; i < maillists.length; i++) {
 					addressTo[i] = new InternetAddress(maillists[i]);
 				}
-				mailMessage.setRecipients(MimeMessage.RecipientType.TO, addressTo);
+				mailMessage.setRecipients(RecipientType.TO, addressTo);
 				// 设置邮件消息的主题
 				mailMessage.setSubject(subject);
 				// 设置邮件消息发送的时间

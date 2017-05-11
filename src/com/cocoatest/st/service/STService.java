@@ -36,6 +36,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
+import android.view.ViewGroup.LayoutParams;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
@@ -215,7 +216,8 @@ public class STService extends Service {
 					dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
 					Handler handler = new Handler(getMainLooper());
 					handler.post(new Runnable(){
-					    public void run(){
+					    @Override
+						public void run(){
 					    	dialog.show();
 					    }
 					});
@@ -311,7 +313,7 @@ public class STService extends Service {
 	 * create a floating window to show real-time data.
 	 */
 	private void createFloatingWindow() {
-		SharedPreferences shared = getSharedPreferences("float_flag", Activity.MODE_PRIVATE);
+		SharedPreferences shared = getSharedPreferences("float_flag", Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = shared.edit();
 		editor.putInt("float", 1);
 		editor.commit();
@@ -323,11 +325,12 @@ public class STService extends Service {
 		wmParams.gravity = Gravity.LEFT | Gravity.TOP;
 		wmParams.x = 0;
 		wmParams.y = 0;
-		wmParams.width = WindowManager.LayoutParams.WRAP_CONTENT;
-		wmParams.height = WindowManager.LayoutParams.WRAP_CONTENT;
+		wmParams.width = LayoutParams.WRAP_CONTENT;
+		wmParams.height = LayoutParams.WRAP_CONTENT;
 		wmParams.format = 1;
 		windowManager.addView(viFloatingWindow, wmParams);
 		viFloatingWindow.setOnTouchListener(new OnTouchListener() {
+			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				x = event.getRawX();
 				y = event.getRawY() - 25;
@@ -373,6 +376,7 @@ public class STService extends Service {
 
 	private Runnable task = new Runnable() {
 
+		@Override
 		public void run() {
 			if (!isServiceStop) {
 				dataRefresh();
